@@ -1,10 +1,10 @@
 import React from "react";
 
 function Timer(props) {
-  const { timer } = props;
+  const { counter } = props;
   return (
     <div>
-      <h1>{timer}</h1>
+      <h1>{counter}</h1>
     </div>
   );
 }
