@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Timer(props) {
   const { counter } = props;
@@ -8,5 +9,9 @@ function Timer(props) {
     </div>
   );
 }
+
+Timer.propTypes = {
+  counter: PropTypes.string.isRequired
+};
 
 export default Timer;

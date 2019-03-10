@@ -6,6 +6,15 @@ import Timer from "./Timer";
 import "./App.css";
 
 class App extends Component {
+  static timeTostring(numbers) {
+    const minutes = parseInt(numbers / 60, 10);
+    const seconds = parseInt(numbers % 60, 10);
+    const total = `${minutes < 10 ? `0${minutes}` : minutes}:${
+      seconds < 10 ? `0${seconds}` : seconds
+    }`;
+    return total;
+  }
+
   constructor(props) {
     super(props);
 
@@ -18,14 +27,14 @@ class App extends Component {
       shortBreak: 2,
       longBreak: 3,
       loop: 0,
-      isLooping: false
+      isLooping: false,
+      scream: "pomodoro"
     };
 
     this.countDown = this.countDown.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleOptions = this.handleOptions.bind(this);
     this.reset = this.reset.bind(this);
-    this.timeTostring = this.timeTostring.bind(this);
     this.setOptions = this.setOptions.bind(this);
     this.looper = this.looper.bind(this);
   }
@@ -35,37 +44,41 @@ class App extends Component {
     if (current === "Pomodoro") {
       this.setState({
         timer: pomodoro,
-        counter: this.timeTostring(pomodoro),
+        counter: App.timeTostring(pomodoro),
         reset: pomodoro,
-        loop: !isLooping ? 0 : loop
+        loop: !isLooping ? 0 : loop,
+        scream: "pomodoro"
       });
       clearInterval(this.myTime);
       this.setState({ stop: true });
     } else if (current === "Short Break") {
       this.setState({
         timer: shortBreak,
-        counter: this.timeTostring(shortBreak),
+        counter: App.timeTostring(shortBreak),
         reset: shortBreak,
-        loop: !isLooping ? 0 : loop
+        loop: !isLooping ? 0 : loop,
+        scream: "short-break"
       });
       clearInterval(this.myTime);
       this.setState({ stop: true });
     } else if (current === "Long Break") {
       this.setState({
         timer: longBreak,
-        counter: this.timeTostring(longBreak),
+        counter: App.timeTostring(longBreak),
         reset: longBreak,
-        loop: !isLooping ? 0 : loop
+        loop: !isLooping ? 0 : loop,
+        scream: "long-break"
       });
       clearInterval(this.myTime);
       this.setState({ stop: true });
     } else if (current === "Pomodoro Loop") {
       this.setState({
         timer: pomodoro,
-        counter: this.timeTostring(pomodoro),
+        counter: App.timeTostring(pomodoro),
         reset: pomodoro,
         loop: 0,
-        isLooping: true
+        isLooping: true,
+        scream: "pomodoro-loop"
       });
       clearInterval(this.myTime);
       this.setState({ stop: true });
@@ -85,7 +98,7 @@ class App extends Component {
       });
       const { timer } = this.state;
       this.setState({
-        counter: this.timeTostring(timer),
+        counter: App.timeTostring(timer),
         stop: false
       });
       /* Stop clock when 0 */
@@ -141,32 +154,28 @@ class App extends Component {
   }
 
   reset() {
-    const { reset, isLooping } = this.state;
+    const { reset, isLooping, pomodoro } = this.state;
     this.setState({
-      timer: reset,
-      counter: this.timeTostring(reset),
+      timer: isLooping ? pomodoro : reset,
+      counter: App.timeTostring(reset),
       stop: true,
       loop: 0,
-      isLooping: !!isLooping
+      isLooping: !!isLooping,
+      scream: isLooping && "pomodoro"
     });
   }
 
-  timeTostring(numbers) {
-    const minutes = parseInt(numbers / 60, 10);
-    const seconds = parseInt(numbers % 60, 10);
-    const total = `${minutes < 10 ? `0${minutes}` : minutes}:${
-      seconds < 10 ? `0${seconds}` : seconds
-    }`;
-    return total;
-  }
-
   render() {
-    const { counter } = this.state;
+    const { scream, isLooping, timer } = this.state;
     return (
       <div className="App">
         <Header />
-        <Options handleOptions={this.handleOptions} />
-        <Timer counter={counter} />
+        <Options
+          handleOptions={this.handleOptions}
+          scream={scream}
+          isLooping={isLooping}
+        />
+        <Timer counter={App.timeTostring(timer)} />
         <Play handlePlay={this.handlePlay} />
       </div>
     );

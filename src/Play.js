@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Play(props) {
   const { handlePlay } = props;
@@ -10,5 +11,9 @@ function Play(props) {
     </header>
   );
 }
+
+Play.propTypes = {
+  handlePlay: PropTypes.func.isRequired
+};
 
 export default Play;
