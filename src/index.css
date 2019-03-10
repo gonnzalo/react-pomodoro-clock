@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Play|Roboto");
+
+:root {
+  --main-color: rgb(223, 103, 99);
+  --secundary-color: #3f3e3a;
+  --button-color: #e4e3e1;
+  --text-color: rgb(80, 77, 77);
+  --text-secundary-color: rgb(206, 206, 206);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -15,4 +24,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
+  background-color: var(--main-color);
 }

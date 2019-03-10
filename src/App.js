@@ -169,14 +169,16 @@ class App extends Component {
     const { scream, isLooping, timer } = this.state;
     return (
       <div className="App">
-        <Header />
-        <Options
-          handleOptions={this.handleOptions}
-          scream={scream}
-          isLooping={isLooping}
-        />
-        <Timer counter={App.timeTostring(timer)} />
-        <Play handlePlay={this.handlePlay} />
+        <div className="container">
+          <Header />
+          <Options
+            handleOptions={this.handleOptions}
+            scream={scream}
+            isLooping={isLooping}
+          />
+          <Timer counter={App.timeTostring(timer)} />
+          <Play handlePlay={this.handlePlay} />
+        </div>
       </div>
     );
   }

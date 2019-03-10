@@ -5,3 +5,14 @@
   justify-content: center;
   flex-direction: column;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--secundary-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0.4rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}

@@ -10,30 +10,27 @@ function Options(props) {
         type="button"
         value="Pomodoro"
         onClick={handleOptions}
-        className={
-          (scream === "pomodoro" && "active") ||
-          (scream === "pomodoro-loop" && "active ")
-        }
+        className={`${(scream === "pomodoro" && "active") ||
+          (scream === "pomodoro-loop" && "active ")} btns`}
       />
       <input
         type="button"
         value="Short Break"
         onClick={handleOptions}
-        className={scream === "short-break" && "active"}
+        className={`${scream === "short-break" && "active"} btns`}
       />
       <input
         type="button"
         value="Long Break"
         onClick={handleOptions}
-        className={scream === "long-break" && "active"}
+        className={`${scream === "long-break" && "active"} btns`}
       />
       <input
         type="button"
         value="Pomodoro Loop"
         onClick={handleOptions}
-        className={
-          (scream === "pomodoro-loop" && "active ") || (isLooping && "active")
-        }
+        className={`${(scream === "pomodoro-loop" && "active") ||
+          (isLooping && "active")} btns`}
       />
     </div>
   );
