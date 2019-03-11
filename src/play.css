@@ -1,0 +1,17 @@
+.playBtns {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  margin: 1rem;
+  outline: none;
+}
+
+.icons {
+  color: var(--text-color);
+  transform: scale(2);
+  transition: 0.4s;
+}
+
+.icons:hover {
+  color: rgb(226, 180, 27);
+}

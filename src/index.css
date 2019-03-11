@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css?family=Play|Roboto");
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
 :root {
-  --main-color: rgb(223, 103, 99);
-  --secundary-color: #3f3e3a;
-  --button-color: #e4e3e1;
-  --text-color: rgb(80, 77, 77);
-  --text-secundary-color: rgb(206, 206, 206);
+  --main-color: rgb(241, 242, 245);
+  --secundary-color: rgb(55, 68, 83);
+  --primary-color: rgb(255, 254, 253);
+  --text-color: rgb(55, 68, 83);
 }
 
 html {
@@ -20,9 +18,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", cursive;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   background-color: var(--main-color);
+  color: var(--text-color);
 }

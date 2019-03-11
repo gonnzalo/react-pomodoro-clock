@@ -5,7 +5,7 @@ import "./options.css";
 function Options(props) {
   const { handleOptions, scream, isLooping } = props;
   return (
-    <div>
+    <div className="btns-container">
       <input
         type="button"
         value="Pomodoro"
@@ -27,7 +27,7 @@ function Options(props) {
       />
       <input
         type="button"
-        value="Pomodoro Loop"
+        value="Loop"
         onClick={handleOptions}
         className={`${(scream === "pomodoro-loop" && "active") ||
           (isLooping && "active")} btns`}

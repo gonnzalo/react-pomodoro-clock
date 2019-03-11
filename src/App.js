@@ -3,6 +3,7 @@ import Header from "./Header";
 import Options from "./Options";
 import Play from "./Play";
 import Timer from "./Timer";
+import Setting from "./Setting";
 import "./App.css";
 
 class App extends Component {
@@ -26,6 +27,9 @@ class App extends Component {
       pomodoro: 5,
       shortBreak: 2,
       longBreak: 3,
+      pomodoroSetting: 1500,
+      shortBreakSetting: 300,
+      longBreakSetting: 600,
       loop: 0,
       isLooping: false,
       scream: "pomodoro"
@@ -37,6 +41,8 @@ class App extends Component {
     this.reset = this.reset.bind(this);
     this.setOptions = this.setOptions.bind(this);
     this.looper = this.looper.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   setOptions(current) {
@@ -71,7 +77,7 @@ class App extends Component {
       });
       clearInterval(this.myTime);
       this.setState({ stop: true });
-    } else if (current === "Pomodoro Loop") {
+    } else if (current === "Loop") {
       this.setState({
         timer: pomodoro,
         counter: App.timeTostring(pomodoro),
@@ -135,19 +141,23 @@ class App extends Component {
         this.countDown();
         break;
       default:
+        this.setOptions("Loop");
         break;
     }
   }
 
   handlePlay(event) {
+    event.stopPropagation();
+    event.preventDefault();
     const { stop } = this.state;
-    if (event.target.value === "play" && stop) {
+    const eventCurrent = event.currentTarget.value;
+    if (eventCurrent === "play" && stop) {
       clearInterval(this.myTime);
       this.countDown();
-    } else if (event.target.value === "stop") {
+    } else if (eventCurrent === "stop") {
       clearInterval(this.myTime);
       this.setState({ stop: true });
-    } else if (event.target.value === "reset") {
+    } else if (eventCurrent === "reset") {
       clearInterval(this.myTime);
       this.reset();
     }
@@ -160,17 +170,34 @@ class App extends Component {
       counter: App.timeTostring(reset),
       stop: true,
       loop: 0,
-      isLooping: !!isLooping,
-      scream: isLooping && "pomodoro"
+      isLooping: !!isLooping
     });
+  }
+
+  handleChange(name, newVal) {
+    this.setState({
+      [name]: newVal * 60
+    });
+  }
+
+  handleSubmit(event) {
+    const { pomodoroSetting, shortBreakSetting, longBreakSetting } = this.state;
+    this.setState(
+      {
+        pomodoro: pomodoroSetting,
+        shortBreak: shortBreakSetting,
+        longBreak: longBreakSetting
+      },
+      () => this.setOptions("Pomodoro")
+    );
   }
 
   render() {
     const { scream, isLooping, timer } = this.state;
     return (
       <div className="App">
+        <Header />
         <div className="container">
-          <Header />
           <Options
             handleOptions={this.handleOptions}
             scream={scream}
@@ -178,6 +205,10 @@ class App extends Component {
           />
           <Timer counter={App.timeTostring(timer)} />
           <Play handlePlay={this.handlePlay} />
+          <Setting
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
         </div>
       </div>
     );

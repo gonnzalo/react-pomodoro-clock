@@ -1,14 +1,30 @@
-.active {
+.btns-container {
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .btns {
-  padding: 0.9rem;
+  flex-grow: 1;
+  flex-basis: 0;
+  min-width: 220px;
+  padding: 0.8rem;
   border: none;
-  border-radius: 55px;
-  margin: 0.5rem;
-  background-color: var(--button-color);
-  color: var(--text-color);
+  margin: 0.3rem;
+  border: 1px solid var(--secundary-color);
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+  color: var(--secundary-color);
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow: 0.4rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in;
+}
+
+.active {
+  background-color: var(--secundary-color);
+  color: #eee;
 }
