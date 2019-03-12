@@ -33,7 +33,9 @@ class App extends Component {
       loop: 0,
       isLooping: false,
       scream: "pomodoro",
-      showSetting: false
+      showSetting: false,
+      /* add class to play, pause, reset botton */
+      playActive: ""
     };
 
     this.countDown = this.countDown.bind(this);
@@ -160,12 +162,15 @@ class App extends Component {
     const { stop } = this.state;
     const eventCurrent = event.currentTarget.value;
     if (eventCurrent === "play" && stop) {
+      this.setState({ playActive: "play" });
       clearInterval(this.myTime);
       this.countDown();
     } else if (eventCurrent === "stop") {
+      this.setState({ playActive: "stop" });
       clearInterval(this.myTime);
       this.setState({ stop: true });
     } else if (eventCurrent === "reset") {
+      this.setState({ playActive: "reset" });
       clearInterval(this.myTime);
       this.reset();
     }
@@ -197,7 +202,8 @@ class App extends Component {
         pomodoro: pomodoroSetting,
         shortBreak: shortBreakSetting,
         longBreak: longBreakSetting,
-        showSetting: false
+        showSetting: false,
+        playActive: ""
       },
       () => this.setOptions("Pomodoro")
     );
@@ -205,7 +211,7 @@ class App extends Component {
   }
 
   render() {
-    const { scream, isLooping, timer, showSetting } = this.state;
+    const { scream, isLooping, timer, showSetting, playActive } = this.state;
     return (
       <div className="App">
         <Header settingToggle={this.settingToggle} />
@@ -216,7 +222,7 @@ class App extends Component {
             isLooping={isLooping}
           />
           <Timer counter={App.timeTostring(timer)} />
-          <Play handlePlay={this.handlePlay} />
+          <Play handlePlay={this.handlePlay} playActive={playActive} />
           <Setting
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}

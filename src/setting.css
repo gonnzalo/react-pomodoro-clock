@@ -1,11 +1,10 @@
 .setting-container {
   position: absolute;
   top: -600px;
-  min-height: 50vh;
+  min-height: 30vh;
   min-width: 23vw;
   background-color: var(--main-color);
   border: 1px solid rgb(42, 42, 71);
-  display: flex;
   padding: 2rem;
 }
 

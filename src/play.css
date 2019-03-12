@@ -14,8 +14,12 @@
 }
 
 .icons:hover {
-  color: rgb(226, 180, 27);
+  color: rgb(245, 202, 61);
 }
 .icons:active {
   transform: scale(2.5);
+}
+
+.icons-active {
+  color: rgb(245, 202, 61);
 }

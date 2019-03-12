@@ -88,7 +88,7 @@ Setting.propTypes = {
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   settingToggle: PropTypes.func.isRequired,
-  showSetting: PropTypes.func.isRequired
+  showSetting: PropTypes.bool.isRequired
 };
 
 export default Setting;

@@ -38,4 +38,9 @@
   text-transform: uppercase;
   margin-left: 1rem;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.btns-nav:hover {
+  color: rgb(209, 209, 62);
 }

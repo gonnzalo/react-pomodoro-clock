@@ -7,7 +7,7 @@ import Stop from "@material-ui/icons/Stop";
 import "./play.css";
 
 function Play(props) {
-  const { handlePlay } = props;
+  const { handlePlay, playActive } = props;
   return (
     <div>
       <button
@@ -16,7 +16,9 @@ function Play(props) {
         onClick={handlePlay}
         className="playBtns"
       >
-        <Pause className="icons" />
+        <Pause
+          className={`icons ${playActive === "stop" && "icons-active"} `}
+        />
       </button>
       <button
         type="button"
@@ -24,7 +26,9 @@ function Play(props) {
         onClick={handlePlay}
         className="playBtns"
       >
-        <PlayArrow className="icons" />
+        <PlayArrow
+          className={`icons ${playActive === "play" && "icons-active"} `}
+        />
       </button>
       <button
         type="button"
@@ -32,14 +36,15 @@ function Play(props) {
         onClick={handlePlay}
         className="playBtns"
       >
-        <Stop className="icons" />
+        <Stop className="icons " />
       </button>
     </div>
   );
 }
 
 Play.propTypes = {
-  handlePlay: PropTypes.func.isRequired
+  handlePlay: PropTypes.func.isRequired,
+  playActive: PropTypes.string.isRequired
 };
 
 export default Play;
