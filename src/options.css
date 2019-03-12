@@ -34,3 +34,27 @@
   background-color: var(--secundary-color);
   color: #eee;
 }
+
+@media all and (max-width: 480px) {
+  .btns-container {
+    padding: 0 2rem;
+  }
+
+  .btns {
+    font-size: 1rem;
+    margin: 0.2rem;
+    padding: 0.7rem;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 1020px) {
+  .btns-container {
+    padding: 0 4rem;
+  }
+
+  .btns {
+    font-size: 1.3rem;
+    margin: 0.2rem;
+    padding: 0.7rem;
+  }
+}

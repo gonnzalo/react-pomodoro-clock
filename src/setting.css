@@ -12,6 +12,13 @@
   top: 200px;
 }
 
+@media all and (max-width: 520px) {
+  .active-modal {
+    top: 50px;
+    width: 100%;
+  }
+}
+
 .setting-header {
   margin: 0;
   letter-spacing: 1px;

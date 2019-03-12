@@ -1,0 +1,14 @@
+.howto-container {
+  position: absolute;
+  top: -800px;
+  font-size: 1.2rem;
+  min-height: 30vh;
+  width: 520px;
+  background-color: var(--main-color);
+  border: 1px solid rgb(42, 42, 71);
+  padding: 2rem;
+}
+
+.howto-modal {
+  top: 200px;
+}

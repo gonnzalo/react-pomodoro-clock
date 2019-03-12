@@ -4,6 +4,7 @@ import Options from "./Options";
 import Play from "./Play";
 import Timer from "./Timer";
 import Setting from "./Setting";
+import HowTo from "./HowTo";
 import "./App.css";
 
 class App extends Component {
@@ -35,7 +36,8 @@ class App extends Component {
       scream: "pomodoro",
       showSetting: false,
       /* add class to play, pause, reset botton */
-      playActive: ""
+      playActive: "",
+      howTo: false
     };
 
     this.countDown = this.countDown.bind(this);
@@ -47,11 +49,18 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.settingToggle = this.settingToggle.bind(this);
+    this.howToToggle = this.howToToggle.bind(this);
   }
 
   settingToggle() {
     this.setState(prevStat => {
-      return { showSetting: !prevStat.showSetting };
+      return { showSetting: !prevStat.showSetting, howTo: false };
+    });
+  }
+
+  howToToggle() {
+    this.setState(prevStat => {
+      return { howTo: !prevStat.howTo, showSetting: false };
     });
   }
 
@@ -211,10 +220,20 @@ class App extends Component {
   }
 
   render() {
-    const { scream, isLooping, timer, showSetting, playActive } = this.state;
+    const {
+      scream,
+      isLooping,
+      timer,
+      showSetting,
+      playActive,
+      howTo
+    } = this.state;
     return (
       <div className="App">
-        <Header settingToggle={this.settingToggle} />
+        <Header
+          settingToggle={this.settingToggle}
+          howToToggle={this.howToToggle}
+        />
         <div className="container">
           <Options
             handleOptions={this.handleOptions}
@@ -229,6 +248,7 @@ class App extends Component {
             settingToggle={this.settingToggle}
             showSetting={showSetting}
           />
+          <HowTo showSetting={howTo} howToToggle={this.howToToggle} />
         </div>
       </div>
     );

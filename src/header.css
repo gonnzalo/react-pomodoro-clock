@@ -44,3 +44,59 @@
 .btns-nav:hover {
   color: rgb(209, 209, 62);
 }
+
+.btns-mobile {
+  display: none;
+}
+
+@media all and (max-width: 1020px) {
+  .tittle {
+    font-size: 1.2rem;
+  }
+
+  .btns-nav {
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 520px) {
+  .header-container {
+    visibility: hidden;
+  }
+
+  .header-container header {
+    height: 0px;
+    width: 100%;
+  }
+
+  .btns-mobile {
+    display: block;
+    visibility: visible;
+    color: var(--secundary-color);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .setting-icon {
+    transform: scale(1.3);
+  }
+
+  /* delete hover effect on touch */
+  @media (hover: none), (hover: on-demand) {
+    .btns-nav:hover {
+      color: var(--secundary-color);
+    }
+  }
+}
+
+@media all and (min-width: 520px) and (max-width: 1024px) {
+  .header-container header {
+    width: 85%;
+  }
+  @media (hover: none), (hover: on-demand) {
+    .btns-nav:hover {
+      color: var(--primary-color);
+    }
+  }
+}

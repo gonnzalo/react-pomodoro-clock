@@ -23,3 +23,9 @@
 .icons-active {
   color: rgb(245, 202, 61);
 }
+
+@media all and (max-width: 480px) {
+  .playBtns {
+    padding: 0.5rem;
+  }
+}
