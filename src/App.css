@@ -10,5 +10,5 @@
   font-size: 2rem;
   padding: 2rem;
   border-radius: 10px;
-  height: 80vh;
+  height: calc(100% - 88px);
 }

@@ -4,6 +4,7 @@
   padding: 1rem;
   margin: 1rem;
   outline: none;
+  cursor: pointer;
 }
 
 .icons {
@@ -14,4 +15,7 @@
 
 .icons:hover {
   color: rgb(226, 180, 27);
+}
+.icons:active {
+  transform: scale(2.5);
 }

@@ -1,0 +1,86 @@
+.setting-container {
+  position: absolute;
+  top: -600px;
+  min-height: 50vh;
+  min-width: 23vw;
+  background-color: var(--main-color);
+  border: 1px solid rgb(42, 42, 71);
+  display: flex;
+  padding: 2rem;
+}
+
+.active-modal {
+  top: 200px;
+}
+
+.setting-header {
+  margin: 0;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.setting-options {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+}
+
+.input-setting {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.submit-container {
+  display: flex;
+}
+
+.submit-setting {
+  width: 100%;
+  margin: 1.5rem 0.5rem 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(233, 70, 70);
+  color: #fff;
+  box-shadow: 0rem 0.2rem 1rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-setting:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.submit-setting:last-child {
+  background-color: rgb(35, 133, 150);
+}
+
+.submit-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  padding: 0 0.6rem 0.6rem 0.6rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-close:hover {
+  opacity: 0.85;
+  color: rgb(160, 160, 15);
+}

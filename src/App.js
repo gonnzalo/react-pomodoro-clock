@@ -32,7 +32,8 @@ class App extends Component {
       longBreakSetting: 600,
       loop: 0,
       isLooping: false,
-      scream: "pomodoro"
+      scream: "pomodoro",
+      showSetting: false
     };
 
     this.countDown = this.countDown.bind(this);
@@ -43,6 +44,13 @@ class App extends Component {
     this.looper = this.looper.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.settingToggle = this.settingToggle.bind(this);
+  }
+
+  settingToggle() {
+    this.setState(prevStat => {
+      return { showSetting: !prevStat.showSetting };
+    });
   }
 
   setOptions(current) {
@@ -174,29 +182,33 @@ class App extends Component {
     });
   }
 
+  /* Change the value on custom settings */
   handleChange(name, newVal) {
     this.setState({
       [name]: newVal * 60
     });
   }
 
+  /* Submit settting */
   handleSubmit(event) {
     const { pomodoroSetting, shortBreakSetting, longBreakSetting } = this.state;
     this.setState(
       {
         pomodoro: pomodoroSetting,
         shortBreak: shortBreakSetting,
-        longBreak: longBreakSetting
+        longBreak: longBreakSetting,
+        showSetting: false
       },
       () => this.setOptions("Pomodoro")
     );
+    event.preventDefault();
   }
 
   render() {
-    const { scream, isLooping, timer } = this.state;
+    const { scream, isLooping, timer, showSetting } = this.state;
     return (
       <div className="App">
-        <Header />
+        <Header settingToggle={this.settingToggle} />
         <div className="container">
           <Options
             handleOptions={this.handleOptions}
@@ -208,6 +220,8 @@ class App extends Component {
           <Setting
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
+            settingToggle={this.settingToggle}
+            showSetting={showSetting}
           />
         </div>
       </div>

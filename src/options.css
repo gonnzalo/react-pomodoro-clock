@@ -21,7 +21,13 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
   transition: 0.3s ease-in;
+}
+
+.btns:hover {
+  background-color: var(--secundary-color);
+  color: #eee;
 }
 
 .active {
