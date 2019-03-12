@@ -33,7 +33,8 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  settingToggle: PropTypes.func.isRequired
+  settingToggle: PropTypes.func.isRequired,
+  howToToggle: PropTypes.func.isRequired
 };
 
 export default Header;

@@ -58,12 +58,6 @@ class App extends Component {
     });
   }
 
-  howToToggle() {
-    this.setState(prevStat => {
-      return { howTo: !prevStat.howTo, showSetting: false };
-    });
-  }
-
   setOptions(current) {
     const { pomodoro, shortBreak, longBreak, isLooping, loop } = this.state;
     if (current === "Pomodoro") {
@@ -128,13 +122,19 @@ class App extends Component {
       });
       /* Stop clock when 0 */
       const { counter, isLooping } = this.state;
+      const audioAlamr = new Audio(
+        "https://freesound.org/data/previews/250/250629_4486188-lq.mp3"
+      );
       if (counter === "00:00" && isLooping) {
+        audioAlamr.play();
         clearInterval(this.myTime);
         this.setState(prevStat => {
           return { loop: prevStat.loop + 1 };
         });
         this.looper();
       } else if (counter === "00:00") {
+        audioAlamr.play();
+        this.setState({ playActive: "" });
         clearInterval(this.myTime);
       }
     }, 1000);
@@ -161,6 +161,7 @@ class App extends Component {
         break;
       default:
         this.setOptions("Loop");
+        this.setState({ playActive: "" });
         break;
     }
   }
@@ -219,6 +220,12 @@ class App extends Component {
     event.preventDefault();
   }
 
+  howToToggle() {
+    this.setState(prevStat => {
+      return { howTo: !prevStat.howTo, showSetting: false };
+    });
+  }
+
   render() {
     const {
       scream,
@@ -248,7 +255,7 @@ class App extends Component {
             settingToggle={this.settingToggle}
             showSetting={showSetting}
           />
-          <HowTo showSetting={howTo} howToToggle={this.howToToggle} />
+          <HowTo howTo={howTo} howToToggle={this.howToToggle} />
         </div>
       </div>
     );

@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./howTo.css";
 
 function HowTo(props) {
-  const { showSetting, howToToggle } = props;
+  const { howTo, howToToggle } = props;
   return (
-    <div className={`howto-container ${showSetting && "howto-modal"}`}>
+    <div className={`howto-container ${howTo && "howto-modal"}`}>
       <input
         type="button"
         className="submit-close"
@@ -12,7 +13,7 @@ function HowTo(props) {
         value="x"
         onClick={howToToggle}
       />
-      <h4>Pomodoro Technique</h4>
+      <h3>Pomodoro Technique</h3>
       <p>There are six steps in the original technique:</p>
       <ol>
         <li>Decide on the task to be done.</li>
@@ -32,5 +33,10 @@ function HowTo(props) {
     </div>
   );
 }
+
+HowTo.propTypes = {
+  howTo: PropTypes.bool.isRequired,
+  howToToggle: PropTypes.func.isRequired
+};
 
 export default HowTo;
