@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Header from "./Header";
-import Options from "./Options";
-import Play from "./Play";
-import Timer from "./Timer";
-import Setting from "./Setting";
-import HowTo from "./HowTo";
+import Header from "./components/Header";
+import Options from "./components/Options";
+import Play from "./components/Play";
+import Timer from "./components/Timer";
+import Setting from "./components/Setting";
+import HowTo from "./components/HowTo";
 import "./App.css";
 
 class App extends Component {
