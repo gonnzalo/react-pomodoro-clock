@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
 :root {
   --main-color: rgb(241, 242, 245);
-  --secundary-color: rgb(55, 68, 83);
+  --secundary-color: rgb(54, 88, 128);
   --primary-color: rgb(255, 255, 255);
-  --text-color: rgb(55, 68, 83);
+  --text-color: rgb(54, 88, 128);
 }
 
 html {

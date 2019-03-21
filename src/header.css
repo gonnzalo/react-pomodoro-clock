@@ -51,7 +51,7 @@
 
 @media all and (max-width: 1020px) {
   .tittle {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .btns-nav {
@@ -59,7 +59,7 @@
   }
 }
 
-@media all and (max-width: 520px) {
+@media all and (max-width: 545px) {
   .header-container {
     visibility: hidden;
   }
