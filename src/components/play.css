@@ -14,14 +14,14 @@
 }
 
 .icons:hover {
-  color: rgb(245, 202, 61);
+  color: rgb(255, 136, 25);
 }
 .icons:active {
   transform: scale(2.5);
 }
 
 .icons-active {
-  color: rgb(245, 202, 61);
+  color: rgb(255, 136, 25);
 }
 
 @media all and (max-width: 480px) {

@@ -27,12 +27,12 @@
 
 .btns:hover {
   background-color: var(--secundary-color);
-  color: #eee;
+  color: rgb(33, 50, 70);
 }
 
 .active {
   background-color: var(--secundary-color);
-  color: #eee;
+  color: rgb(33, 50, 70);
 }
 
 @media all and (max-width: 480px) {

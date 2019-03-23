@@ -13,8 +13,14 @@
   height: calc(100% - 88px);
 }
 
-@media all and (max-width: 520px) {
+@media all and (min-width: 320px) and (max-width: 1020px) {
   .container {
     height: 100%;
+  }
+}
+
+@media all and (min-width: 320px) {
+  .container {
+    margin-left: 1rem;
   }
 }

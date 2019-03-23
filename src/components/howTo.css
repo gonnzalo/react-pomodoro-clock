@@ -5,8 +5,9 @@
   min-height: 30vh;
   width: 520px;
   background-color: var(--main-color);
-  border: 1px solid rgb(42, 42, 71);
+  border: 1px solid rgb(255, 255, 255);
   padding: 2rem;
+  color: rgb(157, 230, 144);
 }
 
 .howto-modal {

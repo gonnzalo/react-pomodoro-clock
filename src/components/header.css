@@ -1,6 +1,6 @@
 .header-container {
-  background-color: var(--secundary-color);
-  box-shadow: 0rem 0.6rem 1rem rgba(0, 0, 0, 0.2);
+  background-color: rgb(39, 40, 53);
+  box-shadow: 0rem 0.6rem 1rem rgba(42, 42, 42, 0.089);
 }
 
 .header-container header {
@@ -14,7 +14,7 @@
 
 .tittle {
   margin: 0;
-  color: var(--primary-color);
+  color: rgb(136, 223, 140);
   font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 2px;
@@ -31,7 +31,7 @@
   background-color: transparent;
   border: none;
   outline: none;
-  color: var(--primary-color);
+  color: rgb(136, 223, 140);
   font: inherit;
   font-size: 1.3rem;
   letter-spacing: 1px;
