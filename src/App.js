@@ -21,13 +21,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      timer: 5,
-      counter: "00:05",
-      reset: 5,
+      timer: 1500,
+      counter: "25:00",
+      reset: 1500,
       stop: true,
-      pomodoro: 5,
-      shortBreak: 2,
-      longBreak: 3,
+      pomodoro: 1500,
+      shortBreak: 300,
+      longBreak: 600,
       pomodoroSetting: 1500,
       shortBreakSetting: 300,
       longBreakSetting: 600,

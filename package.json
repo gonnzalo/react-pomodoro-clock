@@ -1,6 +1,8 @@
 {
   "name": "react-pomodoro-clock",
   "version": "0.1.0",
+  "author": "gonnzalo",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
@@ -14,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
