@@ -2,7 +2,9 @@
 
 Pomodoro Clock is a React single web app to use the Pomodoro Technique
 
-## Demo
+![ScreenShot](https://raw.github.com/gonnzalo/personal-website/master/src/images/pomodoro.png)
+
+## Live Demo
 
 [https://pomodoro-timer.gonnzalo.now.sh/](https://pomodoro-timer.gonnzalo.now.sh/)
 
