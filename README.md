@@ -17,7 +17,7 @@ To run locally in development mode please follows this guide:
 ```shell
 git clone https://github.com/gonnzalo/react-pomodoro-clock
 cd react-pomodoro-clock/
-git install
+npm install
 ```
 
 2- Runs the app in development mode.
